@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deadbolt — Secure Password Generator</title>
+<!-- This <link> tag is how HTML pulls in an external CSS file.
+     rel="stylesheet" tells the browser what kind of file it's linking. -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+  <div class="eyebrow">
+    <div class="mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#C9A24B" stroke-width="1.8">
+        <rect x="5" y="11" width="14" height="9" rx="1.5"/>
+        <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+      </svg>
+    </div>
+    <span class="eyebrow-text"><strong>Deadbolt</strong> · password generator</span>
+  </div>
+
+  <h1>Generate a password worth trusting.</h1>
+  <p class="sub">Built on the Web Crypto API. Nothing you generate here is ever logged, stored, or sent anywhere! It exists in your browser and nowhere else.</p>
+
+  <div class="output-wrap">
+    <div class="output-row">
+      <div id="password" class="placeholder">Press generate to begin</div>
+      <button class="copy-btn" id="copyBtn" aria-label="Copy password" title="Copy to clipboard">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="8" y="8" width="12" height="12" rx="2"/>
+          <path d="M4 16V5a1 1 0 0 1 1-1h11"/>
+        </svg>
+      </button>
+    </div>
+    <div class="meta-row">
+      <div class="strength">
+        <div class="strength-bars" id="strengthBars">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <span id="strengthLabel">—</span>
+      </div>
+      <span class="entropy-val" id="entropyVal">— bits</span>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="length-row">
+      <span>Length</span>
+      <span class="length-val" id="lengthVal">16</span>
+    </div>
+    <input type="range" id="lengthSlider" min="8" max="64" value="16">
+
+    <div class="toggles">
+      <label class="toggle">
+        <input type="checkbox" id="optUpper" checked>
+        Uppercase (A–Z)
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="optLower" checked>
+        Lowercase (a–z)
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="optNumbers" checked>
+        Numbers (0–9)
+      </label>
+      <label class="toggle">
+        <input type="checkbox" id="optSymbols" checked>
+        Symbols (!@#$…)
+      </label>
+    </div>
+  </div>
+
+  <button class="generate-btn" id="generateBtn">Generate password</button>
+
+  <p class="footnote">Runs entirely client-side. View the source on <a href="#" id="repoLink">GitHub</a> to verify it yourself.</p>
+
+</div>
+
+<!-- This <script> tag with a src= attribute is how HTML pulls in an
+     external JS file. Placed at the end of <body> so the DOM elements
+     above already exist by the time the script runs and looks for them. -->
+<script src="script.js"></script>
+</body>
+</html>
