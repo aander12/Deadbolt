@@ -1,6 +1,5 @@
 [README.md](https://github.com/user-attachments/files/32131937/README.md)
-# Deadbolt
-Secure password generator that uses crypto.getRandom() rather than math.random() so that we may generate a truly powerful password with zero predictability. 
+
 # Deadbolt
 
 A password generator I built as a starter project while working toward my Cybersecurity Engineering degree. Wanted something small enough to finish in a day but with enough real substance to actually talk about — so instead of just doing the typical `Math.random()` version, I built it around the Web Crypto API and dug into how to avoid the small mistakes that make a "secure" generator not actually secure.
