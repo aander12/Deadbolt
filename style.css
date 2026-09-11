@@ -290,12 +290,17 @@ input[type="range"]::-moz-range-thumb {
 }
 
 .footnote a {
-  color: var(--slate);
+  color: #5B9BD5;
   text-decoration: underline;
-  text-decoration-color: rgba(140, 147, 160, 0.4);
+  text-decoration-color: rgba(91, 155, 213, 0.5);
+  text-shadow: 0 0 8px rgba(91, 155, 213, 0.35);
+  transition: text-shadow 0.2s ease, color 0.2s ease;
 }
 
-.footnote a:hover { color: var(--brass); }
+.footnote a:hover {
+  color: #7CB3E8;
+  text-shadow: 0 0 14px rgba(91, 155, 213, 0.6);
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
